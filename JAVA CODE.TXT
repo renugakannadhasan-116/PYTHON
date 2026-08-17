@@ -1,0 +1,189 @@
+1.2481-MINIMUM CUTS TO DIVIDE A CIRCLE
+Class Solution {
+    public int numberOfCuts(int n) {
+    if(num==1) {
+        return 0;
+    }  
+    if(n%2==0){
+        return n/2;
+
+    } 
+    return n;
+    }
+}
+
+
+2.2235-ADD TWO INTEGER
+lass Solution {
+    public int numberOfCuts(int n) {
+    if(num==1) {
+        return 0;
+    }  
+    if(n%2==0){
+        return n/2;
+
+    } 
+    return n;
+    }
+}
+
+
+3.1025-DIVISOR GAME
+class Solution {
+public boolean divisorGame(int n) {
+return n % 2 ==0;
+}
+}
+
+
+4.912-SORT AN ARRAY
+class Solution {
+    public int[] sortArray(int[] nums) {
+        int n = nums.length;
+
+        // Bubble Sort
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (nums[j] > nums[j + 1]) {
+                    int temp = nums[j];
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = temp;
+                }
+            }
+        }
+
+        return nums;
+    }
+}
+
+
+5.2651-calculate delay time
+class Solution {
+    public int findDelayedArrivalTime(int arrivalTime, int delayedTime) {
+        return (arrivalTime + delayedTime) % 24;
+    }
+}
+
+
+6.2600-k items with maximum sum
+class Solution {
+    public int kItemsWithMaximumSum(int numOnes, int numZeros, int numNegOnes, int k) {
+        if (k <= numOnes) {
+            return k;
+        }
+        if (k <= numOnes + numZeros) {
+            return numOnes;
+        }
+        int remaining = k - (numOnes + numZeros);
+        return numOnes - remaining;
+    }
+
+
+7.1952-THREE 
+public class Solution {
+    public boolean isThree(int n) {
+        // Step 1: Find the integer square root
+        int root = (int) Math.sqrt(n);
+        
+        // Step 2: Check if n is a perfect square
+        if (root * root != n) {
+            return false;
+        }
+        
+        // Step 3: Check if the square root is a prime number
+        return isPrime(root);
+    }
+    
+    private boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+
+9.2427-NUMBER OF COMMON FACTORS
+public class Solution {
+    public int commonFactors(int a, int b) {
+        int count = 0;
+        int limit = Math.min(a, b);
+        
+        // Loop through all possible factors up to the smaller number
+        for (int i = 1; i <= limit; i++) {
+            if (a % i == 0 && b % i == 0) {
+                count++;
+            }
+        }
+        
+        return count;
+    }
+}
+
+
+10.1952-SUM MULTIPLES
+class Solution {
+    public int sumOfMultiples(int n) {
+        int sum = 0;
+        for (int i = 1; i <= n; i++) {
+            if (i % 3 == 0 || i % 5 == 0 || i % 7 == 0) {
+                sum += i;
+            }
+        }
+        return sum;
+    }
+}
+
+
+11.202-HAPPY NUMBER
+mport java.util.HashSet;
+
+class Solution {
+    public boolean isHappy(int n) {
+        
+        HashSet<Integer> seen = new HashSet<>();
+        
+        
+        while (n != 1 && !seen.contains(n)) {
+            seen.add(n);
+            
+            
+            int sum = 0;
+            while (n > 0) {
+                int digit = n % 10;
+                sum += digit * digit;
+                n /= 10;
+            }
+            
+            n = sum; 
+        }
+        
+        
+        return n == 1;
+    }
+}
+
+
+12.1929-CONCANTENATION OF ARRAY
+class Solution {
+    public int[] getConcatenation(int[] nums) {
+        int n = nums.length;
+        int[] ans = new int[2 * n];
+        
+        for (int i = 0; i < n; i++) {
+            ans[i] = nums[i];        // First half
+            ans[i + n] = nums[i];    // Second half
+        }
+        
+        return ans;
+    }
+}
+
+
+
+
